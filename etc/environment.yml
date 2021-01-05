@@ -59,10 +59,10 @@ CLI_SCRIPT=php /app/index.php
 #    because it's stored database in
 #    volume and provisioning is only
 #    done once.
-MYSQL_ROOT_PASSWORD=dev
-MYSQL_USER=root
-MYSQL_PASSWORD=
-MYSQL_DATABASE=cms-laravel
+#MYSQL_ROOT_PASSWORD=dev
+#MYSQL_USER=root
+#MYSQL_PASSWORD=root
+#MYSQL_DATABASE=cms-laravel
 
 #######################################
 # PostgreSQL settings

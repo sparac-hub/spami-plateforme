@@ -54,6 +54,16 @@ services:
       - 13306:3306
     volumes:
       - mysql:/var/lib/mysql
+
+    environment:
+      MYSQL_DATABASE: 'cms-laravel'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'root'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: ''
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'dev'
+
     env_file:
       - etc/environment.yml
       - etc/environment.development.yml

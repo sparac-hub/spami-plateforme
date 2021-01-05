@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="form-group col-sm-2 col-md-2 col-lg-2">
+        <label>{{__('og.menus.http_protocol')}} *</label>
+        <select class="form-control" name="{{$locale}}[http_protocol]">
+            <option value="">-- http / https --</option>
+            @foreach(config('cms.http_protocols') as $http_protocol)
+                <option value="{{ $http_protocol }}"
+                        {{ old($locale.'.http_protocol', isset($banner)?$banner->translateOrNew($locale)->http_protocol:'') == $http_protocol ? 'selected':'' }}>
+                    {{ $http_protocol }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="form-group col-sm-7 col-md-7 col-lg-7">
+        <label>{{__('og.menus.external_link')}} *</label>
+        <input type="text" class="form-control is-not-module" name="{{$locale}}[external_link]"
+               value="{{ old($locale.'.external_link', isset($banner)?$banner->translateOrNew($locale)->external_link:'') }}">
+    </div>
+
+    <div class="form-group col-sm-3 col-md-3 col-lg-3">
+        <label>{{__('og.menus.link_target')}} *</label>
+        <select class="form-control" name="{{$locale}}[link_target]">
+            <option value="">-- Cible --</option>
+            @foreach(config('cms.link_targets') as $link_target_value => $link_target_label)
+                <option value="{{ $link_target_value }}"
+                        {{ old($locale.'.link_target', isset($banner)?$banner->translateOrNew($locale)->link_target:'') == $link_target_value ? 'selected':'' }}>
+                    {{ $link_target_label }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+</div>
